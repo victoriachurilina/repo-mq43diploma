@@ -1,5 +1,13 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 93.75%;
+}
+body {
+  font-family: open-sans-r, sans-serif;
 }
 @font-face {
   font-family: open-sans-regular;
@@ -37,16 +45,16 @@
   font-weight: 400;
   font-style: bold;
 }
-body {
-  font-family: open-sans-r, sans-serif;
-}
 .header {
-  width: 100%;
+  background-image: url(../images/banner-bg.jpg);
+  margin: 0 auto;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   position: relative;
+  background-color: #000000;
   z-index: 0;
+  padding: 30px 170px;
 }
 .header:after {
   content: "";
@@ -58,6 +66,19 @@ body {
   left: 0;
   opacity: 0.4;
   z-index: -1;
+}
+.header-wrap {
+  max-width: 1200px;
+  margin: auto;
+}
+.top-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  vertical-align: middle;
+}  
+.logo {
+  width: 12rem;
 }
 .nav-menu {
   list-style-type: none;
@@ -91,22 +112,24 @@ body {
   margin-bottom: 2px;
   background-color: #ffffff;
 } 
-.blog-title {
-  margin-left: auto;
-  margin-right: auto; 
-}
 .main-title {
+  max-width:730px;
+  margin: auto;
+  padding:105px 0;
   color: #ffffff;
   line-height: 1.4;
+  font-size: 3rem;
   text-transform: uppercase;
   font-weight: 700;
   text-align: center;
 }
 .trend-title {
+  font-size: 1.33rem;
   text-align: center;
   color: #0f0d0e;
   font-weight: 700;
   text-transform: uppercase;
+  padding: 50px 0;
 }
 .trend-title:after {
   content: "";
@@ -121,6 +144,7 @@ body {
 .trend-wrap {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
 }
 .trend-first {
   background-image: url(../images/trend1.jpg);
@@ -135,6 +159,7 @@ body {
   background-image: url(../images/trend4.jpg);
 }
 .trend {
+  width: 24.9%;
   padding: 10rem 1rem 1rem;
   background-repeat: no-repeat;
   background-position: center center;
@@ -156,6 +181,8 @@ body {
   z-index: -1;
 }
 .post-frame {
+  width: 89%;
+  padding: 32px 30px;
   margin-right: auto;
   margin-left: auto;
   display: flex;
@@ -165,6 +192,7 @@ body {
 .trend-list {
   padding-top: 0;
   padding-left: 0;
+  margin-bottom: 10px;
 }
 .category, .category-link {
   display: inline-block;
@@ -183,72 +211,30 @@ body {
   text-decoration: none;
   line-height: 1.2;
 }
-@media (min-width: 1200px) {
-html {
-  font-size: 93.75%;
-}
-.header {
-  background-image: url("../images/banner-bg.jpg");
-}
-.logo {
-  width: 12rem;
-}
-.header-wrap {
-  padding-top: 30px;
-  margin-left: 13rem;
-  margin-right: 13rem;
-}
-.top-wrap {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  vertical-align: middle;
-}  
+@media (min-width: 1199px) {
 .nav-button {
   width: 1px;
   height: 1px;
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute;
 }
-.blog-title {
-  width: 65%;
-  padding-top: 105px;
-  padding-bottom: 130px;
-}
-.main-title {
-  font-size: 3rem;
-}
-.trend-now {
-  padding-top: 50px;
-}
-.trend-title {
- font-size: 1.33rem;
-}
 .trend {
-  width: 24.8%;
-  margin-left: 3px;
+ width: 24.8%;
+ }
+.trend-first, .trend-second, .trend-third {
+  margin-right: 3px;
 }
-.post-frame {
-  padding: 30px 20px;
 }
-.topic-link {
-  font-size: 1.3rem;
-}
-} 
-@media (min-width: 641px) and (max-width: 1200px) {
+@media (min-width: 640px) and (max-width: 1200px) {
 html {
   font-size: 87.5%;
 }
 .header {
-  background-image: url("../images/banner-bg-tablet.jpg");
+  background-image: url(../images/banner-bg-tablet.jpg);
+  padding: 45px 35px;
 }
 .logo {
   width: 11rem;
-}
-.header-wrap {
-  padding-top: 44px;
-  margin-left: 2.6rem;
-  margin-right: 2.6rem;
 }
 .top-wrap {
   display: flex;
@@ -267,32 +253,20 @@ html {
   flex-direction: column;
   align-items: flex-end;
 }
-.blog-title {
-  width: 95%;
-  padding-top: 100px;
-  padding-bottom: 115px;
-}
 .main-title {
+  max-width: 610px;
+  padding: 100px 0 75px;
   font-size: 2.86rem;
-}
-.trend-now {
-  padding-top: 40px;
 }
 .trend-title {
  font-size: 1.14rem;
-}
-.trend-wrap {
-  flex-wrap: wrap;
+ padding: 40px 0;
 }
 .trend {
-  width: 49%;
-  margin-left: 4px;
+  width: 49.5%;
 }
-.post-frame {
-  padding: 30px 25px;
-}
-.topic-link {
-  font-size: 1.21rem;
+.trend-first, .trend-third {
+  margin-right: 3px;
 }
 }
 @media (max-width: 640px) {
@@ -300,7 +274,8 @@ html {
   font-size: 87.5%;
 }
 .header {
-  background-image: url("../images/banner-mobile.jpg");
+  background-image: url(../images/banner-mobile.jpg);
+  padding: 29px 15px;
 }
 .logo {
   width: 18.6rem;
@@ -310,11 +285,6 @@ html {
   align-items: center;
   justify-content: center;
   padding-top: 180px;
-}
-.header-wrap {
-  padding-top: 24px;
-  margin-left: 1rem;
-  margin-right: 1rem;
 }
 .top-wrap {
   display: flex;
@@ -327,52 +297,31 @@ html {
   position: absolute;
 } 
 .navigation-lists {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-.blog-title {
-  width: 95%;
-  padding-top: 30px;
-  padding-bottom: 210px; 
+  position: absolute;
+  top: 23px;
+  right: 23px;
 }
 .main-title {
- font-size: 1.86rem;
-}
-.trend-now {
-  padding-top: 40px;
+  max-width: 300px;
+  padding: 40px 0 190px;
+  font-size: 1.86rem;
 }
 .trend-title {
  font-size: 1.28rem;
-}
-.trend-wrap {
-  flex-wrap: wrap;
+ padding: 40px 0;
 }
 .trend {
   width: 100%;
 }
-.post-frame {
-  padding: 25px 20px;
 }
-.topic-link {
-  font-size: 1.14rem;
-}
-}
-@media (min-width: 641px) and (max-width: 1200px) and (orientation: landscape) {
-.trend-wrap {
- flex-wrap: wrap;
-}
-.trend {
-  width: 24.5%;
-  margin-left: 3px;
-}
-}
-@media (max-width: 640px) and (orientation: landscape) {
-.trend-wrap {
- flex-wrap: wrap;
-}
-.trend { 
-  width: 49%;
-  margin-left: 4px;
-}
-}
+/*Уважаемый Владимир,
+Много сомнений:
+1.Правильно ли я сделала внутренние отступы?
+2.Кнопку бургер? 
+Классы не применяла по вашему совету)
+Жду от вас конструктивной критики
+Спасибо*/
+
+
+
+

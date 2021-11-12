@@ -4,7 +4,11 @@
   padding: 0;
 }
 body {
+  margin: 0 auto;
   font-family: open-sans-r, sans-serif;
+}
+html, body {
+  overflow-x: hidden;
 }
 @font-face {
   font-family: open-sans-regular;
@@ -43,12 +47,12 @@ body {
   font-style: bold;
 }
 .wrapper {
-  width: 100%;
-  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .header {
-  margin-right: auto;
-  margin-left: auto;
+  width: 100%;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -107,13 +111,14 @@ body {
 } 
 .main-title {
   margin: auto;
-  padding:105px 0;
   color: #ffffff;
   line-height: 1.4;
   font-size: 3rem;
   text-transform: uppercase;
   font-weight: 700;
   text-align: center;
+  padding: 170px 230px 130px;
+  border: 3px solid;
 }
 .trend-title {
   font-size: 1.33rem;
@@ -134,7 +139,6 @@ body {
   margin-top: 10px;
 }
 .trend-wrap {
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
 }
@@ -203,15 +207,13 @@ body {
   text-decoration: none;
   line-height: 1.2;
 }
-/*PAAAAAAAAAAAAAAAAAAGE*/
 .page {
   display: flex;
   margin-right: auto;
   margin-left: auto;
 }
 .post {
-  display: flex;
-  vertical-align: middle;  
+  display: flex;  
 }
 .info {
   padding: 0;
@@ -442,7 +444,7 @@ body {
  font-weight: 700;
  vertical-align: top;
 }
-/*SHOOOOOOOOOOP*/
+/*SHOPING*/
 .shop-items {
   max-width: 1200px;
   display: flex;
@@ -499,7 +501,7 @@ body {
   font-weight: 700;
   text-transform: uppercase;
 }
-/*ENDDDDDDD*/
+/*SOCIAL*/
 .social {
   margin-top: 50px;
   max-width: 1200px;
@@ -510,10 +512,8 @@ body {
   background-color: #f4f7f6; 
   margin-right: auto;
   margin-left: auto;
-  padding-top: 35px;
-  padding-bottom: 35px;
+  padding: 20px 460px;
 } 
-
 .profile-social-list {
   list-style-type: none;
   display: flex;
@@ -564,7 +564,7 @@ body {
  display: block;
  text-align: center;
 }
-
+/*MEDIA*/
 @media (min-width: 1200px) {
   html {
   font-size: 93.75%;
@@ -575,9 +575,6 @@ body {
 }
 .logo {
   width: 12rem;
-}
-.main-title {
-  max-width:730px;
 }
 .nav-button {
   width: 1px;
@@ -608,13 +605,9 @@ body {
 html {
   font-size: 87.5%;
 }
-.wrapper {
-  min-width: 641px;
-  max-width: 1200px;
-}
 .header {
   background-image: url(../images/banner-bg-tablet.jpg);
-  padding: 45px 35px;
+  padding: 3rem 3.33rem;
 }
 .logo {
   width: 11rem;
@@ -637,9 +630,9 @@ html {
   align-items: flex-end;
 }
 .main-title {
-  min-width: 610px;
   padding: 100px 0;
   font-size: 2.86rem;
+  border: 2px solid red;
 }
 .trend-title {
  font-size: 1.14rem;
@@ -709,15 +702,13 @@ html {
 .shop-button {
   font-size: 1rem;
 }
+.profile-social {
+  padding: 20px 230px;
+}
 }
 @media (max-width: 640px) {
 html {
   font-size: 87.5%;
-}
-.wrapper {
-  min-width: 320px;
-  max-width: 640px;
-  padding: 0;
 }
 .header {
   background-image: url(../images/banner-mobile.jpg);
@@ -748,7 +739,6 @@ html {
   right: 23px;
 }
 .main-title {
-  min-width: 300px;
   padding: 40px 0 190px;
   font-size: 1.86rem;
 }
@@ -758,39 +748,46 @@ html {
 }
 .trend {
   width: 100%;
+  margin-bottom: 3px;
 }
 .page {
   padding: 10px;
   margin-top: 40px;
-  max-width: 610px;
   display: flex;
   flex-direction: column;
-  margin-right: auto;
-  margin-left: auto;
+  align-items: center;
+  justify-content: center;
 }
 .main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 .post {
-  margin-bottom: 30px;
+  margin: 2.14rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  vertical-align: middle;  
+  justify-content: center;
+  width: 90%;
 }
 .post:after {
   content: "";
   display: inline-block;
-  width: 392px;
+  width: 90%;
   height: 3px;
   background-color: #eeeeee;
   margin-right: auto;
   margin-left: auto;
   margin-top: 20px;
 }
+.img {
+  min-width: 280px;
+  max-width: 300px;
+}
 .category-link {
+  margin-top: 10px;
   font-size: 1rem;
 }
 .info-header {
@@ -826,7 +823,11 @@ html {
 .shop-button {
   font-size: 1rem;
 }
+.profile-social {
+  padding: 25px 50px;
 }
+}
+
 
 /*EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEENNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD*/
 /*@media (min-width: 641px) and (max-width: 1200px) and (orientation: landscape) {

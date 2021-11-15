@@ -52,6 +52,24 @@ html, body {
   align-items: center;
   position: relative;
 }
+.wrapper:before {
+ content: "";
+ display: block;
+ position: fixed;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+}
+.wrapper:before {
+ background-image: linear-gradient(to top,
+ rgba(19, 21, 25, 0.5),
+ rgba(19, 21, 25, 0.5));
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+ z-index: 1;
+}
 .header {
   width: 100%;
   background-repeat: no-repeat;
@@ -271,69 +289,59 @@ html, body {
   margin-left: auto;
   margin-top: 10px;
 }
-
 .new-posts-title, .content-title {
-  font-size: 14px;
+  font-size: 0.93rem;
   text-transform: uppercase;
   font-weight: 700;
 }
 .new-post {
   display: flex;
-  margin-top: 20px;
+  margin-top: 1.33rem;
   vertical-align: middle;
 }
-  .img-news {
-   width: 70px;
-   padding: 0;
-}
-
 .post-content {
-  padding: 0;
-  margin-left: 15px;
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 .content-title {
   display: inline-block;
   padding-top: 5px;
 }
-.search-interest {
-  margin-top: 50px; 
+.search-interest, .subscription, .tags, .categories {
+  margin-top: 3.33rem; 
 } 
 .form-search {
   vertical-align: middle;
+  width: 100%;
 }
-.search-field {
- width: 1px;
- height: 1px;
- clip: rect(1px, 1px, 1px, 1px);
- position: absolute; 
+.search-field, .search-hidden, .hide-email {
+  width: 1px;
+  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute; 
 }
 .input-search {
-  padding: 20px 35px 20px 20px; 
-  font-size: 13px;
+  padding: 1.33rem 2.33rem 1.33rem 1.33rem; 
+  font-size: 0.87rem;
   color: #000000;
-  font-weight: 400;
   border: none;
   background-color: #f4f7f6;
+  min-width: 77%;
 }
 .button-search::before {
   content: "";
   display: inline-block;
-  width: 35px;
-  height: 35px;
+  width: 2.33rem;
+  height: 2.33rem;
   padding: 7px;
   background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/search.svg);
   background-repeat: no-repeat;
-  background-size: 19px;
+  background-size: 1.3rem;
   background-color: #b59f5b;
   background-position: center center; 
   vertical-align: middle;
   border: none;
-}
-.search-hidden {
- width: 1px;
- height: 1px;
- clip: rect(1px, 1px, 1px, 1px);
- position: absolute;  
 }
 .input-search:focus {
   outline: 1px solid #b59f5b;
@@ -342,32 +350,19 @@ html, body {
 .button-search:hover {
   background-color: #323232;
 }
-.subscription {
-  margin-top: 50px; 
-}
 .form-subscription {
-  margin-top: 20px;
+  margin-top: 1.33rem;
 }
 .form-group:nth-child(n + 2){
-  margin-top: 23px;
-}
-.hide-email {
-  width: 1px;
-  height: 1px;
-  clip: rect(1px, 1px, 1px, 1px);
-  position: absolute;
+  margin-top: 1.33rem;
 }
 .input-email {
-  font-size: 13px;
+  font-size: 0.87rem;
   color: #000000;
-  font-weight: 400;
   font-family: inherit;
   background-color: #f4f7f6;
   border: none;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 20px;
-  padding-right: 10px;
+  padding: 1.33rem 0.7rem 1.33rem 1.33rem;
   width: 100%;
 }
 .input-email:focus {
@@ -375,19 +370,16 @@ html, body {
   outline-offset: 2px;
 }
 .button-subscribe {
-  font-size: 14px;
-  line-height: 40px;
+  font-size: 0.93rem;
+  line-height: 2.67;
   color: #ffffff;
   font-weight: 700;
   text-transform: uppercase;
   background-color: #b59f5b;
   display: inline-block;
-  margin-top: 15px;
-  padding: 5px 80px;
+  margin-top: 1rem;
+  padding: 0.33rem 5.33rem;
   width: 100%;
-}
-.tags {
-  margin-top: 50px;
 }
 .tags-list {
   margin-top: 10px;
@@ -413,39 +405,36 @@ html, body {
   text-decoration: none;
   color: #0f0d0e;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 0.8rem;
   font-weight: 700; 
 }
-.categories {
-  margin-top: 48px;
-}
 .menu-categories {
-  margin-top: 20px;
+  margin-top: 1.33rem;
 }
 .categories-list {
-  margin-left: 0;
-  padding-top: 0;
-  padding-left: 0;
   list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  padding-right: 10rem;
 }
-.categories-item:nth-child(n+2){
-  margin-top: 15px;
+.categories-item:nth-child(n + 2) {
+  margin-top: 1rem;
 }
-.categories-item::after {
+.categories-item:after {
   content: "";
   display: block;
   height: 1px;
   background-color: #eeeeee;
-  margin-top: 13px;
+  margin-top: 0.9rem;
 }
 .categories-link {
   text-decoration: none;
   color: #0f0d0e;
-  font-size: 14px;
+  font-size: 0.93rem;
   font-weight: 700;
 }
 .decor {
- font-size: 12px;
+ font-size: 0.8rem;
  color: #b59f5b;
  font-weight: 700;
  vertical-align: top;
@@ -571,6 +560,7 @@ html, body {
  text-align: center;
 }
 .popup {
+  display: none;
   max-width: 385px;
   top: 3rem;
   margin-right: auto;
@@ -580,6 +570,7 @@ html, body {
   background-color: #ffffff;
   padding: 3rem 1.67rem;
   min-height: 50vh;
+  z-index: 2;
 }
 .popup-title {
   text-align: center;
@@ -786,10 +777,10 @@ html {
   padding: 1.43rem 0;
 }
 .trend {
-  width: 49.5%;
+  width: 49.6%;
 }
 .trend-first, .trend-third {
-  margin-right: 3px;
+  margin-right: 4px;
 }
 .page {
   margin-top: 3.21rem;
@@ -995,26 +986,20 @@ html {
 .search-interest {
   margin-top: 4.28rem; 
 } 
-.form-search {
-  width: 100%;
-}
-.input-search {
-  padding: 1.33rem 3rem 1.33rem 1.33rem; 
-}
 .subscription {
   margin-top: 2.86rem; 
 }
 .form-subscription {
   margin-top: 1.1rem;
 }
-.form-group:nth-child(n + 2){
+.form-group:nth-child(n + 2) {
   margin-top: 1rem;
 }
 .tags {
   margin-top: 2.86rem;
 }
 .tag-item:nth-child(3n - 4),
-.tag-item:nth-child(3n - 8){
+.tag-item:nth-child(3n - 8) {
   margin-left: 5px;
 }
 .categories {

@@ -311,17 +311,18 @@ html, body {
 } 
 .form-search {
   display: flex;
+  max-width: 100%;
 }
 .search-field, .search-hidden, .hide-email {
   display: none;
 }
 .input-search {
   padding: 1.33rem 5.33rem 1.33rem 1.33rem;
+  width: 100%;
   font-size: 0.87rem;
   color: #000000;
   border: none;
   background-color: #f4f7f6;
-  width: 100%;
 }
 .button-search::before {
   content: "";
@@ -902,9 +903,10 @@ html {
   margin-bottom: 3px;
 }
 .page {
-  width: 89%;
-  margin-right: 10px;
-  margin-left: 10px;
+  max-width: 100%;
+  min-width: 89%;
+  padding-right: 10px;
+  padding-left: 10px;
   margin-top: 2.7rem;
   display: flex;
   flex-direction: column;
@@ -936,6 +938,8 @@ html {
   margin-top: 1.3rem;
 }
 .img {
+  min-width: 18.57rem;
+  max-width: 21.428rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -980,12 +984,15 @@ html {
 }
 .search-interest {
   margin-top: 4.28rem; 
-} 
+}
 .subscription {
   margin-top: 2.86rem; 
 }
 .form-subscription {
   margin-top: 1.1rem;
+}
+.input-search {
+  padding: 1.33rem 10rem 1.33rem 1.33rem;
 }
 .tags {
   margin-top: 2.86rem;

@@ -172,7 +172,8 @@ html, body {
 .trend {
   display: flex;
   align-items: flex-end;
-  padding: 10rem 1rem 1rem;
+  padding-top: 10rem;
+  padding-bottom: 1.5rem;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -192,12 +193,18 @@ html, body {
 }
 .post-frame {
   width: 89%;
-  padding: 2.13rem 2rem;
+  padding-top: 2.3rem;
+  padding-bottom: 2.3rem;
   margin-right: auto;
   margin-left: auto;
   display: flex;
   flex-direction: column;
   border: 3px solid #b59f5b;
+}
+.frame-wrap {
+  display: flex;
+  flex-direction: column;
+  padding: 0 5.63%;
 }
 .trend-list {
   padding-top: 0;
@@ -1044,9 +1051,9 @@ html {
 }
 }
 @media (min-width: 641px) and (max-width: 1200px) and (orientation: landscape) {
-.trend-wrap {
+/*.trend-wrap {
  flex-wrap: wrap;
-}
+}*/
 .trend {
  width: 24.8%;
  }
@@ -1055,9 +1062,9 @@ html {
 }
 }
 @media (max-width: 640px) and (orientation: landscape) {
-.trend-wrap {
+/*.trend-wrap {
  flex-wrap: wrap;
-}
+}*/
 .trend {
   width: 49.6%;
 }

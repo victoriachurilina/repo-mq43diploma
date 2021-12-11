@@ -897,6 +897,10 @@ html {
   margin-left: auto;
   margin-right: auto;
 }
+.info-header {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
 .ul-list {
   margin-left: 0;
   padding-left: 0;
@@ -910,7 +914,6 @@ html {
 }
 .date, .author {
   margin-top: 14px;
-  margin-bottom: 14px;
   display: inline-block;
   font-size: 0.86rem;
 }

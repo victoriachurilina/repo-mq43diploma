@@ -1,3 +1,10 @@
+/*Здраствуйте Владимир,
+Спасибо, что помогаете довести вёрстку до ума.
+Извините, что не ответила на вопрос (показался риторическим)). мне показалось логичным использовать rem для того, чтобы отступы гармонировали с размером шрифта. 
+Совсем маленькие отступы, вертикальные отступы и размер декора решила оставить в пикселях. 
+Вопрос по блоку с трендами: в планшетной ориентации у меня избавиться от процентов в раскладке не получилось. 
+Буду очень благодарна за подсказку*/
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,41 +14,24 @@ body {
   margin: 0 auto;
 }
 html, body {
-  overflow-x: hidden;
   font-family: open-sans;
+  font-size: 93.75%;
 }
 @font-face {
   font-family: open-sans;
   src: url("../fonts/OpenSans-Bold.ttf");
-  font-weight: 700;
-}
-@font-face {
-  font-family: open-sans;
   src: url("../fonts/OpenSans-Bold.woff2");
+  src: url("../fonts/OpenSans-Bold.woff");
   font-weight: 700;
+  font-style: normal;
 }
 @font-face {
   font-family: open-sans;
   src: url("../fonts/OpenSans-Regular.ttf");
-  font-weight: 400;
-  font-style: normal;
-}
- @font-face {
-  font-family: open-sans;
   src: url("../fonts/OpenSans-Regular.woff");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: open-sans;
   src: url("../fonts/OpenSans-Regular.woff2");
   font-weight: 400;
   font-style: normal;
-}
-@font-face {
-  font-family: open-sans;
-  src: url("../fonts/OpenSans-Bold.woff");
-  font-weight: 700;
 }
 .wrapper {
   display: flex;
@@ -49,30 +39,14 @@ html, body {
   align-items: center;
   position: relative;
 }
-/*.wrapper:before {
- content: "";
- display: block;
- position: fixed;
- top: 0;
- left: 0;
- width: 100%;
- height: 100%;
-}
-.wrapper:before {
- background-image: linear-gradient(to top,
- rgba(19, 21, 25, 0.5),
- rgba(19, 21, 25, 0.5));
- background-size: cover;
- background-position: center;
- background-repeat: no-repeat;
- z-index: 1;
-}*/
 .header {
   width: 100%;
+  background-image: url(../images/banner-bg.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   position: relative;
+  padding: 2rem 11.33rem;
   background-color: #000000;
   z-index: 0;
 }
@@ -93,6 +67,9 @@ html, body {
   align-items: center;
   vertical-align: middle;
 }  
+.logo {
+  width: 12rem;
+}
 .nav-menu {
   list-style-type: none;
   margin-left: 0;
@@ -154,8 +131,8 @@ html, body {
   margin-top: 10px;
 }
 .trend-wrap {
+  width: 100%;
   display: flex;
-  /*flex-wrap: wrap;*/
 }
 .trend-first {
   background-image: url(../images/trend1.jpg);
@@ -172,8 +149,6 @@ html, body {
 .trend {
   display: flex;
   align-items: flex-end;
-  padding-top: 10rem;
-  padding-bottom: 1.5rem;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -191,20 +166,17 @@ html, body {
   opacity: 0.4;
   z-index: -1;
 }
+.trend-first, .trend-second, .trend-third {
+  margin-right: 0.14%;
+}
 .post-frame {
-  width: 89%;
-  padding-top: 2.3rem;
-  padding-bottom: 2.3rem;
+  padding: 2.3rem 2rem;
   margin-right: auto;
   margin-left: auto;
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   border: 3px solid #b59f5b;
-}
-.frame-wrap {
-  display: flex;
-  flex-direction: column;
-  padding: 0 5.63%;
 }
 .trend-list {
   padding-top: 0;
@@ -231,17 +203,24 @@ html, body {
   line-height: 1.2;
 }
 .page {
+  max-width: 1200px;
   display: flex;
 }
+.main {
+  max-width: 770px;
+  display: flex;
+  flex-direction: column;
+}
 .post {
-  display: flex;  
+  display: flex; 
+  margin-top: 50px; 
 }
 .info {
-  margin-left: 2.33rem;
+  margin-left: 1.33rem;
 }
 .info-header {
   margin-top: 8px;
-  margin-bottom: 3.33rem;
+  margin-bottom: 40px;
 }
 .post-title, .topic {
   text-transform: uppercase;
@@ -255,33 +234,30 @@ html, body {
   font-weight: 700; 
 }
 .date, .author {
-  margin-top: 1.33rem;
-  margin-bottom: 2rem;
+  margin-top: 20px;
   display: inline-block;
   font-size: 0.6rem;
 }
 .date {
   color: #888888;
-  margin-right: 0.47rem;
+  margin-right: 7px;
 }
 .text {
   font-size: 0.93rem;
   line-height: 1.4;
 }
 .text-music {
-  margin-top: 1rem;
+  margin-top: 17px;
 }
 .aside {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 18.33rem;
-  margin-left: 3.33rem;  
+  width: 270px;
+  margin-left: 7.75rem;  
 }
 .new-posts-title {
-  text-align: center;
-}
-.new-posts-title {
+  margin-top: 50px;
   text-align: center;
 }
 .new-posts-title::after {
@@ -294,51 +270,56 @@ html, body {
   margin-left: auto;
   margin-top: 10px;
 }
-.new-posts-title, .content-title {
+.new-posts-title {
   font-size: 0.93rem;
   text-transform: uppercase;
   font-weight: 700;
 }
 .new-post {
   display: flex;
-  margin-top: 1.33rem;
+  margin-top: 20px;
   vertical-align: middle;
 }
 .post-content {
-  margin-left: 1rem;
+  margin-left: 1.3rem;
   display: flex;
   flex-direction: column;
 }
 .content-title {
+  font-size: 0.93rem;
+  text-transform: uppercase;
+  font-weight: 700;
   display: inline-block;
   padding-top: 5px;
 }
-.search-interest, .subscription, .tags, .categories {
-  margin-top: 3.33rem; 
-} 
+.search-interest {
+  margin-top: 50px;
+}
 .form-search {
   display: flex;
-  max-width: 100%;
+  justify-content: center;
 }
 .search-field, .search-hidden, .hide-email {
   display: none;
 }
 .input-search {
-  padding: 1.33rem 5.33rem 1.33rem 1.33rem;
-  width: 100%;
   font-size: 0.87rem;
+  line-height: 3.075;
   color: #000000;
   border: none;
   background-color: #f4f7f6;
+  padding: 0.5rem 1.53rem;
+  min-width: 225px;
+  max-width: 315px;
 }
 .button-search::before {
   content: "";
-  display: inline-block;
+  display: flex;
   width: 3.33rem;
   height: 3.33rem;
   background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/search.svg);
   background-repeat: no-repeat;
-  background-size: 1.3rem;
+  background-size: 1.2rem;
   background-color: #b59f5b;
   background-position: center center; 
   vertical-align: middle;
@@ -352,16 +333,21 @@ html, body {
   background-color: #323232;
 }
 .form-subscription {
-  margin-top: 1.33rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
 }
 .input-email {
   font-size: 0.87rem;
+  line-height: 4.2;
   color: #000000;
   font-family: inherit;
   background-color: #f4f7f6;
   border: none;
-  padding: 1.33rem 0.7rem 1.33rem 1.33rem;
-  width: 100%;
+  padding-right: 5.33rem;
+  padding-left: 1.33rem;
+  min-width: 270px;
+  max-width: 360px;
 }
 .input-email:focus {
   outline: 1px solid #b59f5b;
@@ -369,18 +355,15 @@ html, body {
 }
 .button-subscribe {
   font-size: 0.93rem;
-  line-height: 2.67;
+  line-height: 3.67;
   color: #ffffff;
   font-weight: 700;
   text-transform: uppercase;
   background-color: #b59f5b;
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.33rem 5.33rem;
-  width: 100%;
+  margin-top: 15px;
 }
 .tags-list {
-  margin-top: 10px;
+  margin-top: 20px;
   margin-left: 0;
   padding-top: 0;
   padding-left: 0;
@@ -391,12 +374,10 @@ html, body {
 .tag-item {
   border: 3px solid #ededed;
   padding: 6px 10px;
-}
-.group {
-  margin-left: 7px;
-}
-.tag-item {
   margin-top: 5px;
+}
+.group, .group_two {
+  margin-left: 7px;
 }
 .tag-link {
   text-decoration: none;
@@ -406,19 +387,19 @@ html, body {
   font-weight: 700; 
 }
 .menu-categories {
-  margin-top: 1.33rem;
+  margin-top: 20px;
 }
 .categories-list {
   list-style-type: none;
   display: flex;
   flex-direction: column;
-  padding-right: 10rem;
 }
 .subject {
-  margin-top: 1rem;
+  margin-top: 15px;
 }
 .categories-item:after {
   content: "";
+  width: 270px;
   display: block;
   height: 1px;
   background-color: #eeeeee;
@@ -455,15 +436,15 @@ html, body {
   flex-direction: column;
   flex-grow: 1;
   border: 3px solid #b59f5b;
-  padding: 2.33rem 1rem;
-  margin-top: -2rem;
+  padding: 2.33rem 1.5rem;
+  margin-top: -30px;
 }
 .shop-item-link {
   color: #b59f5b;
   text-decoration: none;
 }
 .shop-footer {
-  margin-top: 1.67rem;
+  margin-top: 25px;
   display: flex;
   justify-content: space-between;
 }
@@ -495,21 +476,19 @@ html, body {
 }
 /*SOCIAL*/
 .social {
-  margin-top: 3.33rem;
-  max-width: 1200px;
+  margin-top: 50px;
   margin-right: auto;
   margin-left: auto;
 }
 .profile-social {
   background-color: #f4f7f6; 
-  margin-right: auto;
-  margin-left: auto;
-  padding: 1.33rem 30.67rem;
 } 
 .profile-social-list {
   list-style-type: none;
   display: flex;
   justify-content: center;
+  flex: 1 0 auto;
+  padding: 1.33rem 30rem;
 }
 .social-link {
  width: 1.87rem;
@@ -522,7 +501,7 @@ html, body {
  display: block;
 }
 .social-link_pininterest, .social-link_facebook, .social-link_instagram, .social-link_tumblr {
-  margin-left: 1.67rem;
+ margin-left: 1.67rem;
 }
 .social-link_twitter {
   background-image: url(../svg/004-twitter.svg);  
@@ -540,14 +519,10 @@ html, body {
   background-image: url(../svg/003-tumblr.svg);
 }
 .profile-text {
-  width: 1px;
-  height: 1px;
-  clip: rect(1px, 1px, 1px, 1px);
-  position: absolute;
+  display: none;
 }
 .copyright {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin: 45px 0;
 }
 .copyright-text {
  font-size: 0.8rem;
@@ -557,7 +532,6 @@ html, body {
  text-align: center;
 }
 .popup {
-  display: none;
   max-width: 385px;
   top: 3rem;
   margin-right: auto;
@@ -568,6 +542,9 @@ html, body {
   padding: 3rem 1.67rem;
   min-height: 50vh;
   z-index: 2;
+}
+.popup-hidden {
+  display: none;
 }
 .popup-title {
   text-align: center;
@@ -641,10 +618,7 @@ html, body {
   margin-left: 12px;
 }
 .radio-feedback {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  clip: rect(1px, 1px, 1px, 1px);
+  display: none;
 }
 .text-area-popup {
   padding: 15px;
@@ -699,36 +673,12 @@ html, body {
 }
 /*MEDIA*/
 @media (min-width: 1200px) {
-  html {
-  font-size: 93.75%;
-}
-.header {
- background-image: url(../images/banner-bg.jpg);
- padding: 2rem 11.33rem;
-}
-.logo {
-  width: 12rem;
-}
 .nav-button {
   display: none;
 }
 .trend {
- width: 24.8%;
-}
-.trend-first, .trend-second, .trend-third {
-  margin-right: 0.266%;
-}
-.page {
-  margin-top: 3.67rem;
-  max-width: 1200px;
-}
-.main {
-  max-width: 51.33rem;
-  display: flex;
-  flex-direction: column;
-}
-.post {
-  margin-bottom: 3.67rem;
+  flex: 0 1 450px;
+  padding: 8.667rem 1.5rem 1rem;/*Здесь изменила проценты на флекс*/
 }
 }
 @media (min-width: 641px) and (max-width: 1200px) {
@@ -738,9 +688,6 @@ html {
 .header {
   background-image: url(../images/banner-bg-tablet.jpg);
   padding: 3rem 3.33rem;
-}
-.logo {
-  width: 11rem;
 }
 .top-wrap {
   display: flex;
@@ -768,42 +715,42 @@ html {
   padding: 1.43rem 0;
 }
 .trend {
-  width: 49.6%;
+ padding: 6.857rem 1.286rem 1rem;
+ width: 49.6%;
 }
 .trend-first, .trend-third {
-  margin-right: 0.4%;
+  margin-right: 2px;
 }
-.page {
-  margin-top: 3.21rem;
+.trend-third, .trend-fourth {
+  margin-top: 2px;
 }
 .main {
-  max-width: 27.5rem;
   display: flex;
   flex-direction: column;
+  max-width: 320px;
+  flex: initial;
 }
 .post {
  flex-direction: column;
- margin-bottom: 2.14rem;
+ margin-top: 45px;
 }
-.post:after {
+.post::after {
   content: "";
   display: inline-block;
-  width: 27.86rem;
+  min-width: 300px;
+  max-width: 320px;
   height: 3px;
   background-color: #eeeeee;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 1.43rem;
+  margin-top: 20px;
 }
 .post-title {
   font-size: 1.21rem;
 }
 .info {
-  margin-top: 1rem;
+  margin-top: 14px;
   margin-left: 0;
 }
 .ul-list {
-  margin-top: 10px;
   margin-left: 0;
   padding-left: 0;
   margin-right: 3px;
@@ -813,15 +760,14 @@ html {
   font-size: 1rem;
 }
 .info-header {
-  margin-top: 8px;
-  margin-bottom: 1.07rem;
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
 .post-title {
   font-size: 1.21rem;
 }
 .date, .author {
-  margin-top: 2.1rem;
-  margin-bottom: 2.1rem;
+  margin-top: 30px;
   font-size: 0.86rem;
 }
 .text {
@@ -829,39 +775,43 @@ html {
   line-height: 1.47;
 }
 .aside {
-  max-width: 19.29rem;
+  width: 270px;
   margin-left: 2rem;
 }
-.new-posts-title, .content-title {
+.new-posts-title {
+  margin-top: 45px;
   font-size: 1.07rem;
 }
 .new-post {
-  margin-top: 1.43rem;
+  margin-top: 20px;
 }
-.input-search {
-  padding: 1.43rem;
+.content-title {
+  font-size: 1rem;
 }
 .shop-items {
-  max-width: 49.28rem;
+  max-width: 630px;
   justify-content: flex-start;
 }
 .product {
   width: 48%;
 }
 .rabbit {
-  margin-left: 1.28rem;
+  margin-left: 1.7rem;
 }
 .frame {
-  margin-top: 1.78rem;
+  margin-top: 25px;
 }
 .shop-button {
   font-size: 1rem;
 }
-.profile-social {
-  padding: 20px 230px;
+.social {
+  max-width: 630px;
+}
+.profile-social-list {
+  padding: 1.428rem 17.14rem;
 }
 .popup {
-  top: 3rem;
+  top: 45px;
   padding: 3.45rem 1.78rem;
 }
 }
@@ -880,7 +830,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 12.86rem;
+  padding-top: 180px;
 }
 .top-wrap {
   display: flex;
@@ -908,13 +858,12 @@ html {
 .trend {
   width: 100%;
   margin-bottom: 3px;
+  padding: 6.07rem 1rem 1rem;
 }
 .page {
-  max-width: 100%;
-  min-width: 89%;
-  padding-right: 10px;
-  padding-left: 10px;
-  margin-top: 2.7rem;
+  width: 95%;
+  padding-right: 1rem;
+  padding-left: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -926,32 +875,29 @@ html {
   margin: 0 auto;
 }
 .post {
-  margin: 2.14rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 30px;
 }
 .info {
   margin-left: 0;
 }
-.post:after {
+.post::after {
   content: "";
   display: inline-block;
-  width: 100%;
+  width: 89%;
   height: 3px;
   background-color: #eeeeee;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 1.3rem;
+  margin-top: 20px;
 }
 .img {
-  min-width: 18.57rem;
-  max-width: 21.428rem;
+  flex: 1 0 290px;
+  max-width: 300px;
   margin-left: auto;
   margin-right: auto;
 }
 .ul-list {
-  margin-top: 10px;
   margin-left: 0;
   padding-left: 0;
   display: flex;
@@ -959,16 +905,12 @@ html {
 .category-link {
   font-size: 1rem;
 }
-.info-header {
-  margin-top: 10px;
-  margin-bottom: 1.43rem;
-}
 .post-title {
   font-size: 1.14rem;
 }
 .date, .author {
-  margin-top: 1.43rem;
-  margin-bottom: 1rem;
+  margin-top: 14px;
+  margin-bottom: 14px;
   display: inline-block;
   font-size: 0.86rem;
 }
@@ -977,41 +919,38 @@ html {
   line-height: 1.4;
 }
 .aside {
-  width: 100%;
+  width: 95%;
   display: flex;
   flex-direction: column;
   align-items: center; 
-  margin: 0 auto;
+  margin-left: 0;
 }
-.new-posts-title, .content-title {
-  font-size: 1.14rem;
+.new-posts-title {
+  margin-top: 40px;
+  font-size: 1.143rem;
+}
+.content-title {
+  font-size: 1.143rem;
 }
 .date-post {
  font-size: 0.86rem;
 }
 .search-interest {
-  margin-top: 4.28rem; 
-}
-.subscription {
-  margin-top: 2.86rem; 
-}
-.form-subscription {
-  margin-top: 1.1rem;
+  margin-top: 40px;
 }
 .input-search {
-  padding: 1.33rem 10rem 1.33rem 1.33rem;
+  min-width: 255px;
+  flex: 1 1 auto;
 }
-.tags {
-  margin-top: 2.86rem;
+.input-email {
+  min-width: 300px;
+  flex: 1 1 auto;
 }
 .group_two, .group {
-  margin-left: 5px;
-}
-.categories {
-  margin-top: 3.33rem;
+  margin-left: 3px;
 }
 .menu-categories {
-  margin-top: 1.33rem;
+  margin-top: 30px;
 }
 .categories-list {
   display: flex;
@@ -1020,58 +959,34 @@ html {
   justify-content: flex-start;
 }
 .categories-item {
-  margin-top: 1.6rem;
+  margin-top: 23px;
 }
-.our-products {
-  margin: 10px;
-}
-.shop-items {
-  max-width: 45.71rem;
-  margin: 0 auto;
+.trend-title {
+  font-size: 1.143rem;
 }
 .product {
-  width: 89%;
+ width: 95%;
 }
 .frame, .rabbit {
-  margin-top: 1.43rem;
+  margin-top: 20px;
 }
 .shop-button {
   font-size: 1rem;
 }
 .social {
-  margin: 10px;
+  width: 95%;
 }
-.profile-social {
-  padding: 1.78rem 4rem;
+.profile-social-list {
+  padding: 1.57rem 3.714rem;
+  flex-grow: 1 1;
 }
 .popup {
-  max-width: 22.86rem;
-  top: 3rem;
+  max-width: 320px;
+  top: 42px;
   padding: 1.78rem 1.2rem;
 }
 }
-@media (min-width: 641px) and (max-width: 1200px) and (orientation: landscape) {
-/*.trend-wrap {
- flex-wrap: wrap;
-}*/
-.trend {
- width: 24.8%;
- }
-.trend-first, .trend-second, .trend-third {
-  margin-right: 0.266%;
-}
-}
-@media (max-width: 640px) and (orientation: landscape) {
-/*.trend-wrap {
- flex-wrap: wrap;
-}*/
-.trend {
-  width: 49.6%;
-}
-.trend-first, .trend-third {
-  margin-right: 0.4%;
-}
-}
+
 
 
 

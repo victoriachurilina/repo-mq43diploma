@@ -346,8 +346,6 @@ html, body {
   border: none;
   padding-right: 5.33rem;
   padding-left: 1.33rem;
-  min-width: 270px;
-  max-width: 360px;
 }
 .input-email:focus {
   outline: 1px solid #b59f5b;
@@ -898,7 +896,7 @@ html {
   margin-right: auto;
 }
 .info-header {
-  margin-top: 0;
+  margin-top: 10px;
   margin-bottom: 20px;
 }
 .ul-list {
